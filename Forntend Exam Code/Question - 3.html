@@ -1,0 +1,41 @@
+<!-- Question -> Use css media queries to change the background color of the page  at 2 - 3 different screen sizes : i ; below 600 px -> background becomes lightblue;
+ ii : between 600 px and 900 px -> backgound bcomes light green iii : above 900 px -> backgound becomes light yellow .  -->
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background-color: white;
+    }
+
+    @media (max-width: 599px) {
+      body {
+        background-color: lightblue;
+      }
+    }
+
+    @media (min-width: 600px) and (max-width: 899px) {
+      body {
+        background-color: lightgreen;
+      }
+    }
+
+    @media (min-width: 900px) {
+      body {
+        background-color: lightyellow;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Different Background Colors on Different Screen Size . </h2>
+</body>
+</html>

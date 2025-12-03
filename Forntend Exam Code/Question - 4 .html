@@ -1,0 +1,50 @@
+<!-- Question -> Create a button that reads text from an input , saves it to local Storage and displays it on the page .  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    button {
+        height: 30px;
+        width: 200px;
+        font-size : 18px;
+        background-color: lightsteelblue;
+        color: black;
+        border-radius: 20px;
+    }
+</style>
+
+<body>
+    <h2>Storage Output</h2>
+    <label>
+        Message:
+        <input type="text" id="msg" placeholder="Type a message">
+    </label>
+    <br><br>
+    <button id="saveLocal">Save to localStorage</button>
+   
+    <h3>Stored Outputs</h3>
+    <p><strong>localStorage:</strong> <span id="localOut">None</span></p>
+
+    <script>
+        const msg = document.getElementById('msg');
+        const saveLocal = document.getElementById('saveLocal');
+        const saveSession = document.getElementById('saveSession');
+       
+        function render() {
+            localOut.textContent = localStorage.getItem('message') || 'None';
+        }
+
+        saveLocal.addEventListener('click', () => {
+            localStorage.setItem('message', msg.value);
+            render();
+        });
+
+        render();
+    </script>
+</body>
+
+</html>
